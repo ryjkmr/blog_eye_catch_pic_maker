@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Eye Catch Picture Maker</title>
+
+  <!-- Google Font setting -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500;700;900&family=Barlow:wght@300;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style-gfont.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <canvas id="myCanvas"></canvas>
+    <img src="" alt="" id="image" class="hide">
+    <div id="textbox" class="gfont0 drag-and-drop" contenteditable="true">
+      this is blog title
+    </div>
+
+  </div>
+  <br><br>
+
+  <div class="controls">
+    <button class="fontSample gfont0" name="gfont0">font</button>
+    <button class="fontSample gfont1" name="gfont1">font</button>
+    <button class="fontSample gfont2" name="gfont2">font</button>
+    <button class="fontSample gfont3" name="gfont3">font</button>
+    <button class="fontSample gfont4" name="gfont4">font</button>
+    <button class="fontSample gfont5" name="gfont5">font</button>
+    <button class="fontSample gfont6" name="gfont6">font</button>
+    <button class="fontSample gfont7" name="gfont7">font</button>
+  </div>
+  <div class="controls">
+    <button class="fontSize" name="120px">small</button>
+    <button class="fontSize" name="144px">medium</button>
+    <button class="fontSize" name="170px">large</button>
+    <span>----</span>
+    <button class="textAlign" name="left">left</button>
+    <button class="textAlign" name="center">center</button>
+    <button class="textAlign" name="right">right</button>
+    <span>----</span>
+
+    <input class="checkbox " type="checkbox" id="shadow" name="shadow">
+    <label for="shadow">glow</label>
+
+
+  </div>
+
+  <br>
+  <div class="controls">
+    <label for="loadImage" style="border:solid 1px black; padding:5px">
+      <input id="loadImage" type="file" style="display:none">
+      <!-- <input id="loadImage" type="file" onchange="loadImage()" style="display:none"> -->
+      upload background image</label>
+    <button id="deleteImage">delete image</button>
+  </div>
+  <br>
+  <div class="controls">
+    <span class="optionName">Background: </span>
+    <label for="dark"><input type="radio" name="background" id="dark" value="70%" class="size control-items">dark</label>
+    <label for="bright"><input type="radio" name="background" id="bright" value="90%" class="size control-items"
+        checked>bright</label>
+  </div>
+
+  <div class="controls">
+    <span class="optionName">Shape: </span>
+    <input class="checkbox control-items" type="checkbox" id="triangle" name="triangle" checked>
+    <label for="triangle">triangles</label>
+    <input class="checkbox control-items" type="checkbox" id="rectangle" name="rectangle" checked>
+    <label for="rectangle">rectangles</label>
+    <input class="checkbox control-items" type="checkbox" id="circle" name="circle" checked>
+    <label for="circle">circles</label>
+  </div>
+  <div class="controls">
+    <span class="optionName">Paint: </span>
+    <input class="checkbox control-items" type="checkbox" id="fill" name="fill" checked>
+    <label for="fill">fill</label>
+    <input class="checkbox control-items" type="checkbox" id="white" name="white" checked>
+    <label for="white">white</label>
+
+  </div>
+
+  <div class="controls">
+    <span class="optionName">Shape frequency: </span>
+    <label for="less"><input type="radio" name="freq" id="less" value="5" class="freq control-items">less</label>
+    <label for="normal"><input type="radio" name="freq" id="normal" value="10" class="freq control-items"
+        checked>normal</label>
+    <label for="more"><input type="radio" name="freq" id="more" value="20" class="freq control-items">more</label>
+  </div>
+  <div class="controls">
+    <span class="optionName">Shape size: </span>
+    <label for="small"><input type="radio" name="size" id="small" value="0.2" class="size control-items">small</label>
+    <label for="medium"><input type="radio" name="size" id="medium" value="0.5" class="size control-items"
+        checked>medium</label>
+    <label for="large"><input type="radio" name="size" id="large" value="1" class="size control-items">large</label>
+  </div>
+
+
+  <div class="controls">
+    <button id="redraw">redraw</button>
+    <button id="download">download</button>
+    <button id="reset">reset text</button>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

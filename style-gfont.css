@@ -1,0 +1,120 @@
+#wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 1280px;
+  height: 720px;
+}
+
+#image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1280px;
+  object-fit: cover;
+}
+
+.shadow {
+  text-shadow: 2px 2px 15px white,
+    -2px 2px 15px white,
+    2px -2px 15px white,
+    -2px -2px 15px white;
+}
+
+#textbox {
+  --title-font-size: 144px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  text-align: left;
+  font-size: var(--title-font-size);
+  line-height: 100%;
+}
+
+.optionName{
+  font-weight: bolder;
+  /* background-color:lightgray; */
+  /* padding:3px; */
+}
+
+.controls {
+  font-size: 26px;
+  margin-left: 50px;
+  user-select: none
+}
+
+.fontSample {
+  margin: 10px;
+  padding: 10px;
+  background-color: lightgray;
+  font-size: 32px;
+}
+
+
+button {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.drag-and-drop {
+  cursor: move;
+  position: absolute;
+  z-index: 1000;
+}
+
+.drag {
+  z-index: 1001;
+  /* border: solid 1px black; */
+}
+
+.hide {
+  display: none;
+}
+
+.barlow {
+  font-family: "Barlow", sans-serif;
+}
+
+.condenced {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.gfont0 {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+}
+
+.gfont1 {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+}
+
+.gfont2 {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+}
+
+.gfont3 {
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+}
+
+.gfont4 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+}
+
+.gfont5 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
+}
+
+.gfont6 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+}
+
+.gfont7 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+}
