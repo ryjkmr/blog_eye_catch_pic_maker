@@ -64,7 +64,6 @@ button {
 
 .drag {
   z-index: 1001;
-  /* border: solid 1px black; */
 }
 
 .hide {

@@ -209,68 +209,60 @@
     //以下のサイトにあったプログラムを元に作成
     // https://q-az.net/elements-drag-and-drop/
 
-    //要素の取得
     const textbox = document.getElementById("textbox");
 
-    //要素内のクリックされた位置を取得するグローバル（のような）変数
-    let x;
-    let y;
-
-    //マウスが要素内で押されたとき、又はタッチされたとき発火
+    //textboxにイベントを設定
     textbox.addEventListener("mousedown", mdown, false);
     textbox.addEventListener("touchstart", mdown, false);
 
 
-    //マウスが押された際の関数
+    //マウスが押された時
     function mdown(e) {
 
-        //クラス名に .drag を追加
         this.classList.add("drag");
 
         //タッチデイベントとマウスのイベントの差異を吸収
         const event = (e.type === "mousedown") ? e : e.changedTouches[0];
 
-        //要素内の相対座標を取得
-        x = event.pageX - this.offsetLeft;
-        y = event.pageY - this.offsetTop;
+        //要素内の相対座標を取得。textboxにx,yプロパティを追加
+        textbox.x = event.pageX - this.offsetLeft;
+        textbox.y = event.pageY - this.offsetTop;
 
-        //ムーブイベントにコールバック
+        //mousemoveイベントに設定
         document.body.addEventListener("mousemove", mmove, false);
         document.body.addEventListener("touchmove", mmove, false);
     }
 
-    //マウスカーソルが動いたときに発火
+    //mousedown中にカーソルが動いた時
     function mmove(e) {
 
-        //同様にマウスとタッチの差異を吸収
+        //マウスとタッチの差異を吸収
         const event = (e.type === "mousemove") ? e : e.changedTouches[0];
 
         //フリックしたときに画面を動かさないようにデフォルト動作を抑制
         e.preventDefault();
 
-        //マウスが動いた場所に要素を動かす
-        textbox.style.top = clipNumber(event.pageY - y, 20, 600) + "px";
-        textbox.style.left = clipNumber(event.pageX - x, 10, 1100) + "px";
+        //マウス位置にオブジェクトを移動。範囲制限付き
+        textbox.style.top = clipNumber(event.pageY - textbox.y, 20, 600) + "px";
+        textbox.style.left = clipNumber(event.pageX - textbox.x, 10, 1100) + "px";
 
-        //マウスボタンが離されたとき、またはカーソルが外れたとき発火
+        //マウスボタンが離されたとき、またはカーソルが外れたときmupを設定
         textbox.addEventListener("mouseup", mup, false);
         document.body.addEventListener("mouseleave", mup, false);
-        document.body.addEventListener("click", mup, false);//元のプログラムにクリック時の誤作動防止を追加
+        document.body.addEventListener("click", mup, false);//クリック時の誤作動防止を追加
         textbox.addEventListener("touchend", mup, false);
         document.body.addEventListener("touchleave", mup, false);
 
     }
 
-    //マウスボタンが上がったら発火
-    function mup(e) {
+    //マウスボタンが上がった時の終了処理
+    function mup() {
 
-        //ムーブベントハンドラの消去
         document.body.removeEventListener("mousemove", mmove, false);
         document.body.removeEventListener("touchmove", mmove, false);
+        document.body.removeEventListener("click", mup, false);
         textbox.removeEventListener("mouseup", mup, false);
         textbox.removeEventListener("touchend", mup, false);
-
-        //クラス名 .drag も消す
         textbox.classList.remove("drag");
     }
 
